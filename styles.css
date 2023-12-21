@@ -1,0 +1,371 @@
+/* ---- Basics ---- */
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('fonts/dayloo.ttf') format('truetype');
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    overflow-y: auto;
+    background: url('./media/one.jpg') center/cover fixed no-repeat;
+    background-size: cover;
+    transition: background 0.3s;
+    font-family: 'Arial', sans-serif;
+    overscroll-behavior-y: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 950px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.96);
+    padding: 20px 35px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1,
+h2 {
+    font-family: 'Garamond', serif;
+    letter-spacing: 2px;
+    font-weight: 300;
+    color: #555;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    margin: 0;
+}
+
+a {
+    color: #2c82c0;
+    text-decoration: none;
+}
+
+section {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 4%;
+}
+
+/* ---- Header ---- */
+
+.job-title {
+    font-family: system-ui;
+    font-weight: 200;
+    font-size: smaller;
+    margin-bottom: 2px;
+}
+
+.contact {
+    display: inline-flex;
+    margin-top: 20px;
+    font-size: smaller;
+}
+
+.contact p {
+    margin-left: 26px;
+}
+
+/* Skills & Lang */
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.column {
+    display: flex;
+    padding: 1% 9%;
+}
+
+.dot span {
+    color: #BCB194;
+}
+
+.lang-dot {
+    margin: 0px 20px;
+}
+
+
+.lang {
+    color: #acacb1;
+    font-size: 15px;
+}
+
+/* ---- Experience ---- */
+
+.location-mob{
+    display: none;
+}
+
+.line-title {
+    text-align: center;
+    position: relative;
+    margin: 25px 0 24px;
+}
+
+.line-title h2 {
+    display: inline-block;
+    padding: 0 10px;
+    color: #555;
+    font-size: 20px;
+}
+
+.line-title h2:before,
+.line-title h2:after {
+    content: "";
+    display: inline-block;
+    height: 0.1px;
+    width: 37%;
+    background-color: #bcb199;
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+}
+
+.line-title h2:before {
+    left: 0;
+}
+
+.line-title h2:after {
+    right: 0;
+}
+
+.paris {
+    margin-top: 0 !important;
+
+}
+
+.job-desc-time,
+.job-name-location {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.role {
+    font-size: 17.5px;
+}
+
+.company {
+    font-style: italic;
+    font-weight: 100;
+    font-size: 14px;
+    color: #7d7a7a;
+}
+
+.location,
+.time {
+    font-weight: 100;
+    font-size: 14px;
+    color: #7d7a7a;
+    margin-top: 3px;
+}
+
+.time {
+    color: #474141;
+}
+
+
+.description {
+    white-space: pre-line;
+    font-size: 16px;
+}
+
+
+/* ---- Bullets ---- */
+
+.bullet-list li {
+    position: relative;
+    margin: 0;
+    padding-bottom: 1em;
+    padding-left: 20px;
+}
+
+.bullet-list li:first-child:before {
+    top: 13px;
+}
+
+.first-bullet li:first-child:before {
+    background-color: #BCB194 !important;
+}
+
+.bullet-list li:before {
+    width: 1px;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: -6px;
+    left: 5.5px;
+}
+
+.bullet-list li:last-child:before {
+    background-image: linear-gradient(#BCB194, #cbc2ac, #ffffff);
+}
+
+.bullet {
+    margin-left: -20px;
+    width: 12px;
+    fill: #BCB194;
+    float: left;
+    padding-right: 10px;
+}
+
+/* Education */
+
+.uni {
+    margin: 10px;
+}
+
+.education {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4%;
+}
+
+.education>li {
+    margin-bottom: 2%;
+}
+
+/* ---- Responsive ---- */
+
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 0;
+    }
+
+    .job-title {
+        font-size: 11px;
+    }
+
+    .line-title {
+        margin: 12px 0;
+    }
+
+    .line-title h2:before,
+    .line-title h2:after {
+        width: 28%;
+    }
+
+    .line-title h2 {
+        font-size: 16px;
+    }
+
+    .bullet {
+        margin-left: -13px;
+    }
+
+    .bullet-list li:before {
+        left: 12px;
+    }
+
+    /* ---- Contact ---- */
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    .contact p {
+        margin-left: 26px;
+        margin-bottom: 6px;
+    }
+
+    .decor-title {
+        display: none;
+    }
+
+    .contact>p>img {
+        display: none;
+    }
+
+    .contact>p>a>img {
+        display: none;
+    }
+
+    /* ---- Skills ---- */
+
+    .dot {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    /* ---- Experience ---- */
+
+    .location-mob{
+        display: flex;
+        font-size: 12px;
+        color: #b1b1b1;
+    }
+
+    .description {
+        font-size: 12px;
+        margin: 0 7px 0 2px;
+    }
+
+    .time {
+        font-size: 12px;
+        margin: 0px 8px;
+    }
+
+    .location {
+        display: none;
+    }
+
+    .company{
+        font-size: 11px;
+        margin-left: 8px;
+    }
+
+    .role {
+        font-size: 15px;
+    }
+    /* ---- Languages ---- */
+    .column {
+        flex-direction: column;
+    }
+
+  .lang{
+       font-size: 11px;
+    }
+    /* ---- Education ---- */
+  .education{
+    font-size: 12px;
+  }
+
+}
